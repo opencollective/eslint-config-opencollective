@@ -1,5 +1,4 @@
 module.exports = {
-  "extends": "eslint:recommended",
   // I want to use babel-eslint for parsing!
   "parser": "babel-eslint",
   "env": {
