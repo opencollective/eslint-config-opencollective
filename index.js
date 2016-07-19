@@ -32,11 +32,11 @@ module.exports = {
     // Max 2 lines
     "no-multiple-empty-lines": [2, {"max": 2}],
     // One true brace style: http://eslint.org/docs/rules/brace-style
-    "brace-style": ["error", "1tbs"],
+    "brace-style": [2, "1tbs"],
     // consistent spacing before and after keywords
-    "keyword-spacing": ["error", { "before": true, "after": true }],
+    "keyword-spacing": [2, { "before": true, "after": true }],
     // only let and const allowed. No var.
-    "no-var": "error"
+    "no-var": 2
   },
   "plugins": [
     "react"
