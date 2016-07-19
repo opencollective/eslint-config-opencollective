@@ -11,6 +11,8 @@ module.exports = {
     "no-unused-vars": [2, {"vars": "all"}],
     // No error for unused react
     "react/jsx-uses-react": 1,
+    // Prevent variables used in JSX to be marked incorrectly as unused
+    "react/jsx-uses-vars": 1,
     // Disallow undeclared variables for jsx
     "react/jsx-no-undef": 2,
     // Parenthesis around JSX
@@ -41,6 +43,12 @@ module.exports = {
   "plugins": [
     "react"
   ],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "14.8"
+    }
+  },
   "ecmaFeatures": {
     "jsx": true
   }
