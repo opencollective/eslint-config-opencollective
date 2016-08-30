@@ -1,13 +1,22 @@
 module.exports = {
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+
   // I want to use babel-eslint for parsing!
   "parser": "babel-eslint",
   "env": {
     // I write for browser
     "browser": true,
     // in CommonJS
-    "node": true
+    "node": true,
+    // using es6 syntax
+    "es6": true
   },
   "rules": {
+    // Disallow Unused Variables
     "no-unused-vars": [2, {"vars": "all"}],
     // No error for unused react
     "react/jsx-uses-react": 1,
@@ -17,8 +26,6 @@ module.exports = {
     "react/jsx-no-undef": 2,
     // Parenthesis around JSX
     "react/wrap-multilines": 2,
-    // Disallow Unused Variables
-    "no-unused-vars": 2,
     // require space before/after arrow function's arrow
     // https://github.com/eslint/eslint/blob/master/docs/rules/arrow-spacing.md
     "arrow-spacing": [2, { "before": true, "after": true }],
@@ -41,6 +48,7 @@ module.exports = {
     "no-var": 2
   },
   "plugins": [
+    "import",
     "react"
   ],
   "settings": {
@@ -49,7 +57,11 @@ module.exports = {
       "version": "14.8"
     }
   },
-  "ecmaFeatures": {
-    "jsx": true
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   }
 };
