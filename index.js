@@ -16,7 +16,7 @@ module.exports = {
     "es6": true
   },
   "rules": {
-    // don't allow var (use let/const instead)
+    // Disallow Unused Variables
     "no-unused-vars": [2, {"vars": "all"}],
     // No error for unused react
     "react/jsx-uses-react": 1,
@@ -58,9 +58,10 @@ module.exports = {
     }
   },
   "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true,
-      "modules": true
+      "jsx": true
     }
   }
 };
