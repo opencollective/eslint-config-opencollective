@@ -10,7 +10,7 @@
   "license": "ISC",
   "peerDependencies": {
     "eslint": "^3.0.0",
-    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-react": "^6.2.0"
   }
 }
