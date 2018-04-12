@@ -24,7 +24,7 @@ module.exports = {
     // Disallow undeclared variables for jsx
     "react/jsx-no-undef": 2,
     // Parenthesis around JSX
-    "react/wrap-multilines": 2,
+    "react/jsx-wrap-multilines": 2,
     // require space before/after arrow function's arrow
     // https://github.com/eslint/eslint/blob/master/docs/rules/arrow-spacing.md
     "arrow-spacing": [2, { "before": true, "after": true }],
@@ -53,7 +53,7 @@ module.exports = {
   "settings": {
     "react": {
       "pragma": "React",
-      "version": "14.8"
+      "version": "16.2"
     }
   },
   "parserOptions": {
