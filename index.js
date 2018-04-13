@@ -17,6 +17,10 @@ module.exports = {
   "rules": {
     // Disallow Unused Variables
     "no-unused-vars": [2, {"vars": "all"}],
+    // No trailing spaces
+    "no-trailing-spaces": "warn",
+    // Line breaks at the end of files
+    "eol-last": "warn",
     // No error for unused react
     "react/jsx-uses-react": 1,
     // Prevent variables used in JSX to be marked incorrectly as unused
