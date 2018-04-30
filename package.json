@@ -13,7 +13,7 @@
   },
   "author": "",
   "license": "ISC",
-  "peerDependencies": {
+  "dependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^4.19.1",
     "eslint-plugin-import": "^2.11.0",
