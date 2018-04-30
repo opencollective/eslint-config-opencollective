@@ -1,17 +1,26 @@
 {
   "name": "eslint-config-opencollective",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "description": "Base ESLint config shared across OpenCollective projects (node and browser)",
   "repository": {
     "type": "git",
     "url": "https://github.com/opencollective/eslint-config-opencollective.git"
   },
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": {
+    "name": "Open Collective, Inc.",
+    "email": "team@opencollective.com"
+  },
+  "contributors": [
+    "Xavier Damman <xdamman@opencollective.com>",
+    "Aseem Sood <aseem@opencollective.com>",
+    "François Hodierne <francois@opencollective.com>",
+    "Arnaud Bénard",
+    "Sébastien Dubois"
+  ],
   "license": "ISC",
   "dependencies": {
     "babel-eslint": "^7.2.3",
