@@ -4,14 +4,10 @@ module.exports = {
     "plugin:import/warnings",
     "plugin:react/recommended"
   ],
-  // I want to use babel-eslint for parsing!
   "parser": "babel-eslint",
   "env": {
-    // I write for browser
     "browser": true,
-    // in CommonJS
     "node": true,
-    // using es6 syntax
     "es6": true
   },
   "rules": {
@@ -33,7 +29,7 @@ module.exports = {
 
     // Disallow Unused Variables
     // https://eslint.org/docs/rules/no-unused-vars
-    "no-unused-vars": [2, {"vars": "all"}],
+    "no-unused-vars": [2, { "vars": "all" }],
     // require space before/after arrow function's arrow
     // https://github.com/eslint/eslint/blob/master/docs/rules/arrow-spacing.md
     "arrow-spacing": [2, { "before": true, "after": true }],
@@ -51,7 +47,7 @@ module.exports = {
     "no-const-assign": 2,
     // disallow multiple empty lines (max 2 lines)
     // https://eslint.org/docs/rules/no-multiple-empty-lines
-    "no-multiple-empty-lines": [2, {"max": 2}],
+    "no-multiple-empty-lines": [2, { "max": 2 }],
     // one true brace style
     // http://eslint.org/docs/rules/brace-style
     "brace-style": [2, "1tbs"],
@@ -130,7 +126,7 @@ module.exports = {
   "settings": {
     "react": {
       "pragma": "React",
-      "version": "16.2"
+      "version": "16.3.2"
     }
   },
   "parserOptions": {
