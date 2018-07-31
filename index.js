@@ -135,6 +135,11 @@ module.exports = {
     // configure the position of the first property
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-first-prop-new-line.md
     'react/jsx-first-prop-new-line': 1,
+
+    // avoid complains about es6 imports and exports
+    // https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-unsupported-features/es-syntax.md
+    'node/no-unsupported-features/es-syntax': ['error', {'ignores': ['modules']}],
+
   },
   'plugins': [
     'babel',
