@@ -68,7 +68,7 @@ module.exports = {
     'babel/semi': [1, 'always'],
     // enforce the consistent use of single quotes
     // https://eslint.org/docs/rules/quotes
-    'babel/quotes': [1, 'single'],
+    'babel/quotes': [1, 'single', { 'avoidEscape': true }],
     // enforce consistent spacing inside braces
     // https://eslint.org/docs/rules/object-curly-spacing
     'babel/object-curly-spacing': [1, 'always'],
