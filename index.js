@@ -59,10 +59,6 @@ module.exports = {
     // https://eslint.org/docs/rules/no-var
     'no-var': 2,
 
-    // require at least one whitespace after comments( // and /*)
-    // https://eslint.org/docs/rules/spaced-comment
-    'spaced-comment': ["error", "always"],
-
     // ------------------------------------
     // Adding more eslint rules as warnings
     // ------------------------------------
@@ -79,6 +75,9 @@ module.exports = {
     // require trailing commas
     // https://eslint.org/docs/rules/comma-dangle
     'comma-dangle': [1, 'always-multiline'],
+    // require at least one whitespace after comments( // and /*)
+    // https://eslint.org/docs/rules/spaced-comment
+    'spaced-comment': [1, "always"],
 
     // -------------------------------------------------------------
     // Overhiding react/recommended to (temporarily) relax the rules
