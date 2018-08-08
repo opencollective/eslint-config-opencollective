@@ -59,6 +59,10 @@ module.exports = {
     // https://eslint.org/docs/rules/no-var
     'no-var': 2,
 
+    // require at least one whitespace after comments( // and /*)
+    // https://eslint.org/docs/rules/spaced-comment
+    'spaced-comment': ["error", "always"],
+
     // ------------------------------------
     // Adding more eslint rules as warnings
     // ------------------------------------
