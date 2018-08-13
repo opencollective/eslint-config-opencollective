@@ -77,7 +77,7 @@ module.exports = {
     'comma-dangle': [1, 'always-multiline'],
     // require at least one whitespace after comments( // and /*)
     // https://eslint.org/docs/rules/spaced-comment
-    'spaced-comment': [1, "always"],
+    'spaced-comment': [1, 'always'],
 
     // -------------------------------------------------------------
     // Overhiding react/recommended to (temporarily) relax the rules
