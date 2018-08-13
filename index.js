@@ -24,6 +24,29 @@ module.exports = {
     // https://eslint.org/docs/rules/eol-last
     'eol-last': 1,
 
+    // enforce consistent indentation
+    // https://eslint.org/docs/rules/indent
+    indent: [1, 2, {
+      // ignore JSX because it's handled by JSX specific rules
+      // list taken from:
+      // https://raw.githubusercontent.com/airbnb/javascript/master/packages/eslint-config-airbnb-base/rules/style.js
+      ignoredNodes: [
+        'JSXElement',
+        'JSXElement > *',
+        'JSXAttribute',
+        'JSXIdentifier',
+        'JSXNamespacedName',
+        'JSXMemberExpression',
+        'JSXSpreadAttribute',
+        'JSXExpressionContainer',
+        'JSXOpeningElement',
+        'JSXClosingElement',
+        'JSXText',
+        'JSXEmptyExpression',
+        'JSXSpreadChild',
+      ],
+    }],
+
     // ----------------------------------
     // Adding more eslint rules as errors
     // ----------------------------------
