@@ -86,9 +86,6 @@ module.exports = {
     // prevent missing props validation in a React component definition
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
     'react/prop-types': 1,
-    // detect missing 'key' prop
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md
-    'react/jsx-key': 1,
     // prevent missing React when using JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
     'react/react-in-jsx-scope': 1,
@@ -103,6 +100,9 @@ module.exports = {
     // prevent missing parentheses around multiline JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md
     'react/jsx-wrap-multilines': 2,
+    // prevent usage of Array index in keys
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
+    'react/no-array-index-key': 2,
 
     // -----------------------------------
     // Adding more react rules as warnings
