@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-opencollective",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "Base ESLint config shared across OpenCollective projects (node and browser)",
   "repository": {
     "type": "git",
@@ -11,7 +11,10 @@
     "lint": "eslint *.js",
     "lint:fix": "npm run lint -- --fix",
     "lint:quiet": "npm run lint -- --quiet",
-    "test": "npm run lint"
+    "prettier": "prettier \"*.@(js|json|md)\"",
+    "prettier:write": "npm run prettier -- --write",
+    "prettier:check": "npm run prettier -- --list-different",
+    "test": "npm run lint && npm run prettier:check"
   },
   "author": {
     "name": "Open Collective, Inc.",
@@ -35,11 +38,25 @@
     "eslint-plugin-react": ">=7.10.0"
   },
   "devDependencies": {
-    "babel-eslint": ">=8.2.6",
-    "eslint": ">=5.2.0",
-    "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-import": ">=2.13.0",
-    "eslint-plugin-node": ">=7.0.1",
-    "eslint-plugin-react": ">=7.10.0"
+    "babel-eslint": ">=10.0.1",
+    "eslint": ">=5.16.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": ">=2.17.2",
+    "eslint-plugin-node": ">=9.0.1",
+    "eslint-plugin-react": ">=7.13.0",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.6",
+    "prettier": "^1.17.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
