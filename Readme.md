@@ -15,7 +15,6 @@ Then in your ESLint config:
 
 You may also add in your package.json:
 
-
 ```
   "scripts": {
     "lint": "eslint \"src/**/*.js\"",
