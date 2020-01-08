@@ -42,6 +42,9 @@ module.exports = {
     // require at least one whitespace after comments( // and /*)
     // https://eslint.org/docs/rules/spaced-comment
     'spaced-comment': [1, 'always'],
+    // Require Following Curly Brace Conventions
+    // https://eslint.org/docs/rules/curly
+    curly: [1, 'all'],
 
     // ---------------------------------------
     // Tweaking node/recommended configuration
