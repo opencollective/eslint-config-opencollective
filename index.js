@@ -45,6 +45,9 @@ module.exports = {
     // Require Following Curly Brace Conventions
     // https://eslint.org/docs/rules/curly
     curly: [1, 'all'],
+    // Require empty lines after class members
+    // https://eslint.org/docs/rules/lines-between-class-members
+    'lines-between-class-members': [1, 'always', { exceptAfterSingleLine: true }],
 
     // ---------------------------------------
     // Tweaking node/recommended configuration
