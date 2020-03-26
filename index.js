@@ -47,7 +47,11 @@ module.exports = {
     curly: [1, 'all'],
     // Require empty lines after class members
     // https://eslint.org/docs/rules/lines-between-class-members
-    'lines-between-class-members': [1, 'always', { exceptAfterSingleLine: true }],
+    'lines-between-class-members': [
+      1,
+      'always',
+      { exceptAfterSingleLine: true },
+    ],
     // Require CamelCase
     // https://eslint.org/docs/rules/camelcase
     camelcase: 1,
