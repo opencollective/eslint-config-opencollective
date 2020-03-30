@@ -42,6 +42,9 @@ module.exports = {
     // Adding more eslint rules as warnings
     // ------------------------------------
 
+    // Imports must be sorted
+    // https://eslint.org/docs/rules/sort-imports
+    'sort-imports': 1,
     // require at least one whitespace after comments( // and /*)
     // https://eslint.org/docs/rules/spaced-comment
     'spaced-comment': [1, 'always'],
