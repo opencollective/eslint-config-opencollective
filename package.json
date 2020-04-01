@@ -44,6 +44,7 @@
     "eslint-plugin-import": ">=2.25.2",
     "eslint-plugin-node": ">=11.1.0",
     "eslint-plugin-react": ">=7.26.1",
+    "eslint-plugin-simple-import-sort": ">=5.0.2",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.9",
     "prettier": "^2.3.2"

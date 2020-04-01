@@ -43,8 +43,8 @@ module.exports = {
     // ------------------------------------
 
     // Imports must be sorted
-    // https://eslint.org/docs/rules/sort-imports
-    'sort-imports': 1,
+    // https://github.com/lydell/eslint-plugin-simple-import-sort
+    'simple-import-sort/sort': 'warn',
     // require at least one whitespace after comments( // and /*)
     // https://eslint.org/docs/rules/spaced-comment
     'spaced-comment': [1, 'always'],
