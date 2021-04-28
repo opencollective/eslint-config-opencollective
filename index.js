@@ -34,6 +34,9 @@ module.exports = {
     // require let or const instead of var
     // https://eslint.org/docs/rules/no-var
     'no-var': 2,
+    // Force type-safe equality operators
+    // https://eslint.org/docs/rules/eqeqeq
+    eqeqeq: 2,
 
     // ------------------------------------
     // Adding more eslint rules as warnings
