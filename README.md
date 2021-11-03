@@ -1,6 +1,6 @@
 ## How to use
 
-`npm install --save-dev eslint @babel/eslint-parser eslint-plugin-babel eslint-plugin-import eslint-plugin-node eslint-plugin-react eslint-config-opencollective`
+`npm install --save-dev eslint @babel/eslint-parser eslint-plugin-babel eslint-plugin-import eslint-plugin-node eslint-plugin-react eslint-plugin-simple-import-sort eslint-config-opencollective`
 
 Then in your ESLint config:
 
