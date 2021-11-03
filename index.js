@@ -6,6 +6,9 @@ module.exports = {
     'plugin:react/recommended',
   ],
   parser: '@babel/eslint-parser',
+  parserOptions: {
+    requireConfigFile: false,
+  },
   env: {
     browser: true,
     node: true,

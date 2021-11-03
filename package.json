@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-opencollective",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Base ESLint config shared across OpenCollective projects (node and browser)",
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
   ],
   "license": "ISC",
   "peerDependencies": {
+    "@babel/core": ">=7.16.0",
     "@babel/eslint-parser": ">=7.16.0",
     "eslint": ">=8.1.0",
     "eslint-plugin-babel": ">=5.3.1",
@@ -38,6 +39,7 @@
     "eslint-plugin-react": ">=7.26.1"
   },
   "devDependencies": {
+    "@babel/core": ">=7.16.0",
     "@babel/eslint-parser": ">=7.16.0",
     "eslint": ">=8.1.0",
     "eslint-plugin-babel": ">=5.3.1",
