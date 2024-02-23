@@ -112,7 +112,7 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
     'react/sort-comp': 1,
   },
-  plugins: ['babel', 'import', 'node', 'react', 'simple-import-sort'],
+  plugins: ['@babel', 'simple-import-sort'],
   settings: {
     react: {
       version: 'detect',
