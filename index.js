@@ -47,7 +47,7 @@ module.exports = {
 
     // Imports must be sorted
     // https://github.com/lydell/eslint-plugin-simple-import-sort
-    'simple-import-sort/sort': 'warn',
+    'simple-import-sort/imports': 'warn',
     // require at least one whitespace after comments( // and /*)
     // https://eslint.org/docs/rules/spaced-comment
     'spaced-comment': [1, 'always'],
@@ -112,7 +112,7 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
     'react/sort-comp': 1,
   },
-  plugins: ['babel', 'import', 'node', 'react'],
+  plugins: ['@babel', 'simple-import-sort'],
   settings: {
     react: {
       version: 'detect',
