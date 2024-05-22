@@ -1,7 +1,7 @@
 module.exports = {
   extends: [
     'eslint:recommended',
-    'plugin:node/recommended',
+    'plugin:n/recommended',
     'plugin:import/recommended',
     'plugin:react/recommended',
   ],
@@ -70,17 +70,17 @@ module.exports = {
     // ---------------------------------------
 
     // disallow unsupported ECMAScript features on the specified version
-    // https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-unsupported-features.md
-    'node/no-unsupported-features/es-syntax': 0,
+    // https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-unsupported-features/es-syntax.md
+    'n/no-unsupported-features/es-syntax': 0,
     // disallow import declarations which import extraneous modules
-    // https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-extraneous-import.md
-    'node/no-extraneous-import': 2,
+    // https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-extraneous-import.md
+    'n/no-extraneous-import': 2,
     // disallow import declarations which import non-existence modules
-    // https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-missing-import.md
-    'node/no-missing-import': 2,
+    // https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-missing-import.md
+    'n/no-missing-import': 2,
     // disallow import declarations which import private modules
-    // https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-unpublished-import.md
-    'node/no-unpublished-import': 2,
+    // https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-unpublished-import.md
+    'n/no-unpublished-import': 2,
 
     // -------------------------------------------------------------
     // Overhiding react/recommended to (temporarily) relax the rules
