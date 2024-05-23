@@ -1,14 +1,14 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
     'plugin:n/recommended',
     'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
-  parser: '@babel/eslint-parser',
-  parserOptions: {
-    requireConfigFile: false,
-  },
+  plugins: ['@typescript-eslint/eslint-plugin', 'simple-import-sort'],
   env: {
     browser: true,
     node: true,
@@ -19,9 +19,6 @@ module.exports = {
     // Adding more eslint rules as errors
     // ----------------------------------
 
-    // Disallow Unused Variables
-    // https://eslint.org/docs/rules/no-unused-vars
-    'no-unused-vars': [2, { vars: 'all' }],
     // require using arrow functions as callbacks
     // https://eslint.org/docs/rules/prefer-arrow-callback
     'prefer-arrow-callback': 2,
@@ -45,9 +42,6 @@ module.exports = {
     // Adding more eslint rules as warnings
     // ------------------------------------
 
-    // Imports must be sorted
-    // https://github.com/lydell/eslint-plugin-simple-import-sort
-    'simple-import-sort/imports': 'warn',
     // require at least one whitespace after comments( // and /*)
     // https://eslint.org/docs/rules/spaced-comment
     'spaced-comment': [1, 'always'],
@@ -69,18 +63,10 @@ module.exports = {
     // Tweaking node/recommended configuration
     // ---------------------------------------
 
-    // disallow unsupported ECMAScript features on the specified version
-    // https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-unsupported-features/es-syntax.md
-    'n/no-unsupported-features/es-syntax': 0,
-    // disallow import declarations which import extraneous modules
-    // https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-extraneous-import.md
-    'n/no-extraneous-import': 2,
     // disallow import declarations which import non-existence modules
     // https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-missing-import.md
-    'n/no-missing-import': 2,
-    // disallow import declarations which import private modules
-    // https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-unpublished-import.md
-    'n/no-unpublished-import': 2,
+    // already being validated by import plugin
+    'n/no-missing-import': 0,
 
     // -------------------------------------------------------------
     // Overhiding react/recommended to (temporarily) relax the rules
@@ -111,8 +97,47 @@ module.exports = {
     // enforce component methods order
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
     'react/sort-comp': 1,
+
+    // ---------------------------------
+    // Configuring simple-import-sort
+    // ---------------------------------
+
+    'simple-import-sort/imports': [
+      2,
+      {
+        groups: [
+          // Side effect imports.
+          ['^\\u0000'],
+          // Node.js builtins. You could also generate this regex if you use a `.js` config.
+          // For example: `^(${require("module").builtinModules.join("|")})(/|$)`
+          // eslint-disable-next-line
+          [`^(${require('module').builtinModules.join('|')})(/|$)`],
+          // Packages.
+          // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+          ['^@?\\w'],
+          // Absolute imports and other imports such as Vue-style `@/foo`.
+          // Anything that does not start with a dot.
+          ['^[^.]'],
+          // Parent imports. Put `..` last.
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+        ],
+      },
+    ],
+
+    // ---------------------------------
+    // Typescript
+    // ---------------------------------
+
+    // tweak typescript defaults
+    '@typescript-eslint/ban-types': 1,
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-unused-vars': 2,
+
+    // already being validated by @typescript-eslint/no-unused-vars
+    'no-unused-vars': 0,
   },
-  plugins: ['@babel', 'simple-import-sort'],
   settings: {
     react: {
       version: 'detect',
