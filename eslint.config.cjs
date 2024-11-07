@@ -4,26 +4,40 @@ const react = require('eslint-plugin-react');
 const importPlugin = require('eslint-plugin-import');
 const tseslint = require('typescript-eslint'); // eslint-disable-line n/no-unpublished-require
 const eslint = require('@eslint/js'); // eslint-disable-line n/no-unpublished-require
-const { fixupConfigRules } = require('@eslint/compat'); // eslint-disable-line n/no-unpublished-require
 const globals = require('globals'); // eslint-disable-line n/no-unpublished-require
-const { FlatCompat } = require('@eslint/eslintrc'); // eslint-disable-line n/no-unpublished-require
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: eslint.configs.recommended,
-  allConfig: eslint.configs.all,
-});
+const nodePlugin = require('eslint-plugin-n');
 
 module.exports = tseslint.config(
-  // Legacy plugins
-  ...fixupConfigRules(compat.extends('plugin:n/recommended')),
+  // Node
+  nodePlugin.configs['flat/recommended'],
+  eslint.configs.recommended,
+  importPlugin.flatConfigs.recommended,
+  // React
+  {
+    files: ['**/*.{jsx,tsx,js,ts,cjs,mjs}'],
+    plugins: { react },
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+      parser: tsParser,
+    },
+    settings: {
+      react: {
+        version: 'detect',
+        defaultVersion: '18.0',
+      },
+    },
+  },
+  // TypeScript
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [...tseslint.configs.recommended, importPlugin.configs.typescript],
+  },
   // Main config
   {
-    files: ['**/*.(ts|tsx|js|jsx|cjs)'],
+    files: ['**/*.{jsx,tsx,js,ts,cjs,mjs}'],
     plugins: {
       'simple-import-sort': simpleImportSort,
     },
-    extends: [eslint.configs.recommended, importPlugin.configs.recommended],
     languageOptions: {
       globals: { ...globals.browser, ...globals.node },
       parser: tsParser,
@@ -46,6 +60,9 @@ module.exports = tseslint.config(
         },
       ],
       camelcase: 1,
+      // disallow import declarations which import non-existence modules
+      // https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-missing-import.md
+      // already being validated by import plugin
       'n/no-missing-import': 0,
       'react/prop-types': 1,
       'react/react-in-jsx-scope': 1,
@@ -69,25 +86,5 @@ module.exports = tseslint.config(
       ],
       'no-unused-vars': 0,
     },
-  },
-  // React
-  {
-    files: ['**/*.{jsx,tsx,js,ts,cjs,mjs}'],
-    plugins: { react },
-    languageOptions: {
-      globals: { ...globals.browser, ...globals.node },
-      parser: tsParser,
-    },
-    settings: {
-      react: {
-        version: 'detect',
-        defaultVersion: '18.0',
-      },
-    },
-  },
-  // TypeScript
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [...tseslint.configs.recommended, importPlugin.configs.typescript],
   },
 );
