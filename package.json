@@ -26,7 +26,7 @@
     "Arnaud Bénard",
     "Sébastien Dubois"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "peerDependencies": {
     "@typescript-eslint/parser": ">=8.0.0",
     "eslint": ">=9.0.0",
