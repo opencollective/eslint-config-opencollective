@@ -1,38 +1,22 @@
 const simpleImportSort = require('eslint-plugin-simple-import-sort');
 const tsParser = require('@typescript-eslint/parser');
-const react = require('eslint-plugin-react');
 const importPlugin = require('eslint-plugin-import');
-const tseslint = require('typescript-eslint'); // eslint-disable-line n/no-unpublished-require
-const eslint = require('@eslint/js'); // eslint-disable-line n/no-unpublished-require
-const globals = require('globals'); // eslint-disable-line n/no-unpublished-require
+const tseslint = require('typescript-eslint');
+const eslint = require('@eslint/js');
+const globals = require('globals');
 const nodePlugin = require('eslint-plugin-n');
 
-module.exports = tseslint.config(
+module.exports = [
   // Node
   nodePlugin.configs['flat/recommended'],
   eslint.configs.recommended,
   importPlugin.flatConfigs.recommended,
-  // React
-  {
-    files: ['**/*.{jsx,tsx,js,ts,cjs,mjs}'],
-    plugins: { react },
-    languageOptions: {
-      globals: { ...globals.browser, ...globals.node },
-      parser: tsParser,
-    },
-    settings: {
-      react: {
-        version: 'detect',
-        defaultVersion: '18.0',
-      },
-    },
-  },
-  // TypeScript
+  // Typescript
   {
     files: ['**/*.{ts,tsx}'],
     extends: [...tseslint.configs.recommended, importPlugin.configs.typescript],
   },
-  // Main config
+  // Custom rules
   {
     files: ['**/*.{jsx,tsx,js,ts,cjs,mjs}'],
     plugins: {
@@ -64,11 +48,6 @@ module.exports = tseslint.config(
       // https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-missing-import.md
       // already being validated by import plugin
       'n/no-missing-import': 0,
-      'react/prop-types': 1,
-      'react/react-in-jsx-scope': 1,
-      'react/no-direct-mutation-state': 1,
-      'react/no-array-index-key': 2,
-      'react/sort-comp': 1,
       'simple-import-sort/imports': [
         2,
         {
@@ -87,4 +66,4 @@ module.exports = tseslint.config(
       'no-unused-vars': 0,
     },
   },
-);
+];

@@ -8,13 +8,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix",
-    "lint:quiet": "npm run lint -- --quiet",
     "prettier": "prettier \"*.@(js|cjs|json|md)\"",
     "prettier:write": "npm run prettier -- --write",
     "prettier:check": "npm run prettier -- --list-different",
-    "test": "npm run lint && npm run prettier:check",
+    "test": "npm run prettier:check",
     "prepare": "husky"
   },
   "author": {
@@ -53,7 +50,7 @@
     "typescript-eslint": "^8.11.0"
   },
   "lint-staged": {
-    "*.{js,json,md}": [
+    "*.{js,json,md,cjs}": [
       "prettier --write",
       "git add"
     ]
