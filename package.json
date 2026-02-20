@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-opencollective",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "description": "Base ESLint config shared across OpenCollective projects (node and browser)",
   "repository": {
     "type": "git",
