@@ -27,6 +27,10 @@
     "Sébastien Dubois"
   ],
   "license": "MIT",
+  "engines": {
+    "node": "^20.9.0 || >=21.1.0",
+    "npm": ">=10.0.0"
+  },
   "peerDependencies": {
     "@eslint/js": ">=9.0.0",
     "@typescript-eslint/parser": "^8.30.1",
