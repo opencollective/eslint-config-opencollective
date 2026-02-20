@@ -4,7 +4,7 @@
   "description": "Base ESLint config shared across OpenCollective projects (node and browser)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/opencollective/eslint-config-opencollective.git"
+    "url": "git+https://github.com/opencollective/eslint-config-opencollective.git"
   },
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,11 @@
     "Sébastien Dubois"
   ],
   "license": "MIT",
+  "files": [
+    "eslint-main.config.cjs",
+    "eslint-node.config.cjs",
+    "eslint-react.config.cjs"
+  ],
   "engines": {
     "node": "^20.9.0 || >=21.1.0",
     "npm": ">=10.0.0"
