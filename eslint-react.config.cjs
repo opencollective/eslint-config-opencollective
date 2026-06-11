@@ -1,6 +1,7 @@
 const mainConfig = require('./eslint-main.config.cjs');
 const tsParser = require('@typescript-eslint/parser');
-const react = require('eslint-plugin-react');
+const { fixupPluginRules } = require('@eslint/compat');
+const react = fixupPluginRules(require('eslint-plugin-react'));
 const tseslint = require('typescript-eslint');
 const globals = require('globals');
 
