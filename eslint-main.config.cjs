@@ -4,7 +4,7 @@ const importPlugin = require('eslint-plugin-import');
 const tseslint = require('typescript-eslint');
 const eslint = require('@eslint/js');
 const globals = require('globals');
-const nodePlugin = require('eslint-plugin-n');
+const nodePlugin = require('eslint-plugin-n').default;
 
 module.exports = [
   // Node
