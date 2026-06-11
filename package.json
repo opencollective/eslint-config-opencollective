@@ -11,7 +11,8 @@
     "prettier": "prettier \"*.@(js|cjs|json|md)\"",
     "prettier:write": "npm run prettier -- --write",
     "prettier:check": "npm run prettier -- --list-different",
-    "test": "npm run prettier:check && node --test test/*.test.js",
+    "test": "npm run prettier:check && npm run test:unit",
+    "test:unit": "node --test test/*.test.js",
     "prepare": "husky"
   },
   "author": {
