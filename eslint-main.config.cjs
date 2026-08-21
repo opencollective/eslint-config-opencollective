@@ -4,7 +4,10 @@ const importPlugin = require('eslint-plugin-import');
 const tseslint = require('typescript-eslint');
 const eslint = require('@eslint/js');
 const globals = require('globals');
-const nodePlugin = require('eslint-plugin-n').default;
+// eslint-plugin-n >= 18.2 ships a `module.exports` named export (require(esm) interop), so
+// `require()` returns the plugin itself; older versions return a namespace with `.default`.
+const nodePluginModule = require('eslint-plugin-n');
+const nodePlugin = nodePluginModule.default ?? nodePluginModule;
 
 module.exports = [
   // Node
