@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-opencollective",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "description": "Base ESLint config shared across OpenCollective projects (node and browser)",
   "repository": {
     "type": "git",
@@ -57,7 +57,7 @@
     "@typescript-eslint/parser": "^8.61.0",
     "eslint": "^10.4.1",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-n": "^18.1.0",
+    "eslint-plugin-n": "^18.3.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-simple-import-sort": "^13.0.0",
     "globals": "^17.6.0",
